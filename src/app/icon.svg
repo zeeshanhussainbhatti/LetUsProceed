@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 645 645">
+  <defs>
+    <path id="top" d="M161 323A242 242 0 0 1 645 323H484A81 81 0 0 0 322 323Z"/>
+    <path id="bot" d="M0 323A242 242 0 0 0 484 323H323A81 81 0 0 1 161 323Z"/>
+    <clipPath id="cb"><rect x="484" y="0" width="161" height="323"/></clipPath>
+    <clipPath id="co"><rect x="0" y="323" width="161" height="322"/></clipPath>
+    <linearGradient id="gb" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#0a2ed8"/><stop offset="1" stop-color="#0632c8"/></linearGradient>
+  </defs>
+  <rect x="484" y="0" width="161" height="323" fill="#1772e6"/>
+  <use href="#top" fill="#1772e6"/>
+  <use href="#top" fill="url(#gb)" clip-path="url(#cb)"/>
+  <rect x="0" y="323" width="161" height="322" fill="#f98a28"/>
+  <use href="#bot" fill="#f98a28"/>
+  <use href="#bot" fill="#c81418" clip-path="url(#co)"/>
+</svg>
