@@ -79,3 +79,35 @@ html {
     animation: none;
   }
 }
+
+/* ---------- Version 2 ---------- */
+.v2-bg {
+  background: #f6f3ee;
+}
+.v2-mark > * {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: v2-in 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.v2-mark-a { animation-delay: 0.05s; --from: translate(40%, -40%); }
+.v2-mark-b { animation-delay: 0.15s; --from: translate(0, -30%); }
+.v2-mark-c { animation-delay: 0.25s; --from: translate(0, 30%); }
+.v2-mark-d { animation-delay: 0.35s; --from: translate(-40%, 40%); }
+.v2-mark-e, .v2-mark-f { animation-delay: 0.6s; --from: scale(0.6); }
+@keyframes v2-in {
+  from { opacity: 0; transform: var(--from); }
+  to { opacity: 1; transform: none; }
+}
+.v2-float {
+  animation: v2-float 7s ease-in-out infinite;
+}
+@keyframes v2-float {
+  50% { transform: translateY(-14px) rotate(2deg); }
+}
+.v2-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--stroke, #1d1d1f);
+}
+@media (prefers-reduced-motion: reduce) {
+  .v2-mark > *, .v2-float { animation: none; }
+}
