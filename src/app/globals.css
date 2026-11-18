@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+/* Proceed brand tokens (taken from the live site) */
+:root {
+  --brand-blue: #1a73e8;
+  --brand-blue-deep: #0b3fd6;
+  --brand-orange: #f7882f;
+  --brand-red: #d7141a;
+  --ink: #1d1d1f;
+  --muted: #5b5b66;
+  --surface: #ffffff;
+  --surface-soft: #f3f6fb;
+}
+
+@theme inline {
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-blue-deep: var(--brand-blue-deep);
+  --color-brand-orange: var(--brand-orange);
+  --color-brand-red: var(--brand-red);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-surface: var(--surface);
+  --color-surface-soft: var(--surface-soft);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-montserrat);
+}
+
+body {
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+}
+
+/* Signature pastel gradient used across hero and service sections */
+.bg-brand-gradient {
+  background:
+    radial-gradient(60% 80% at 20% 20%, #c3bdf0 0%, transparent 60%),
+    radial-gradient(60% 80% at 70% 60%, #a8e4f7 0%, transparent 60%),
+    linear-gradient(120deg, #e7e4fa 0%, #c9ecfb 55%, #eef3fb 100%);
+}
