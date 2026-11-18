@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/ui";
 import { graph, organizationSchema } from "@/lib/schema";
 import { site } from "@/lib/site";
@@ -27,12 +25,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" className={`${inter.variable} ${montserrat.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">
         <JsonLd data={graph(organizationSchema(), { "@type": "WebSite", "@id": `${site.url}/#website`, url: `${site.url}/`, name: site.name, publisher: { "@id": `${site.url}/#organization` } })} />
-        <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-white focus:px-4 focus:py-2">
-          Skip to content
-        </a>
-        <Header />
-        <main id="main" className="flex-1">{children}</main>
-        <Footer />
+        {children}
       </body>
     </html>
   );

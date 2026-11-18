@@ -3,8 +3,9 @@ import { PageHero } from "@/components/PageHero";
 import { Faqs } from "@/components/Faqs";
 import { ContactSection } from "@/components/ContactSection";
 import { BrandArt, ButtonLink, Container, JsonLd, LastUpdated, SectionHeading } from "@/components/ui";
-import { breadcrumbSchema, faqSchema, graph, orgId, type Faq } from "@/lib/schema";
+import { breadcrumbSchema, faqSchema, graph, orgId } from "@/lib/schema";
 import { pageMeta } from "@/lib/meta";
+import { aboutFaqs as faqs } from "@/content/faqs";
 import { site } from "@/lib/site";
 
 export const metadata = pageMeta({
@@ -31,40 +32,6 @@ const values = [
   { name: "Lucid", color: "bg-[#3a8bf0]", text: "We're upfront with our clients, partners, and colleagues. No hidden agendas. We prefer keeping things as direct and transparent as possible." },
 ];
 
-const faqs: Faq[] = [
-  {
-    q: "Who owns Let Us Proceed?",
-    a: "Let Us Proceed is part of Sybrid Pvt. Ltd., a strategic business unit of the Lakson Group of Companies. We are a digital marketing agency and technology solutions partner with offices in Karachi, Pakistan and Baldwin, New York.",
-  },
-  {
-    q: "Where is Let Us Proceed located?",
-    a: "Let Us Proceed has two offices. Our Pakistan office is at B-603 & 604, 6th Floor, Lakson Square, Building No.3, Sarwar Shaheed Road, Opp. Press Club, Karachi. Our US office is at 1595 Grand Ave, Baldwin, NY 11510, USA.",
-  },
-  {
-    q: "How long has Let Us Proceed been in business?",
-    a: "We expanded our local services from 2017, started international operations in 2023 and grew to a team of more than 50 people by 2025.",
-  },
-  {
-    q: "How big is the Let Us Proceed team?",
-    a: "Our team has more than 50 members as of 2025, working from our Karachi and New York offices. It covers SEO, social media, paid media, content, design and web development, so one company can run your whole digital marketing plan.",
-  },
-  {
-    q: "Which countries does Let Us Proceed work in?",
-    a: "We work with businesses in Pakistan, the United States and the UAE, and have served clients across two continents. Our Karachi team leads work for Pakistani brands, and our Baldwin, New York office supports clients in the US.",
-  },
-  {
-    q: "What services does Let Us Proceed offer?",
-    a: "We offer SEO, social media marketing, paid media advertising, SEO content writing, branding and creative design, and web development. You can hire one service or combine several, and each has its own page on our website with scope and results.",
-  },
-  {
-    q: "What are the core values at Let Us Proceed?",
-    a: "Our five core values are People first, Disruptive, Optimistic, Systematic and Lucid. In practice that means we put clients and colleagues first, question the status quo, treat problems as opportunities, follow clear processes and stay transparent.",
-  },
-  {
-    q: "How can I contact Let Us Proceed?",
-    a: "Email info@letusproceed.com, call +92 (213) 840 0967 or +1 (516) 206 6600, or send a request through our Get in Touch form. We review your goals and reply with a recommended plan and quote.",
-  },
-];
 
 export default function Page() {
   const crumbs = [

@@ -1,15 +1,7 @@
 import { FileSearch, Link2, Settings } from "lucide-react";
-import { ServicePage, type ServiceData } from "@/components/ServicePage";
-import { pageMeta } from "@/lib/meta";
+import type { ServiceData } from "@/components/ServicePage";
 
-export const metadata = pageMeta({
-  title: "SEO Services in Pakistan & Karachi | Let Us Proceed",
-  description:
-    "SEO services in Pakistan from a Karachi agency: site audit, on-page, off-page and technical SEO, with a plan built around your website.",
-  path: "/services/seo",
-});
-
-const data: ServiceData = {
+export const data: ServiceData = {
   path: "/services/seo",
   crumb: "SEO Services",
   h1: "Site Specific SEO Services In Pakistan",
@@ -107,7 +99,3 @@ const data: ServiceData = {
     description: "On-page SEO, off-page SEO and technical SEO, starting with a site audit and competitor analysis.",
   },
 };
-
-export default function Page() {
-  return <ServicePage data={data} />;
-}

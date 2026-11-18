@@ -1,15 +1,7 @@
 import { FileText, Megaphone, Newspaper, PenLine, ShoppingCart } from "lucide-react";
-import { ServicePage, type ServiceData } from "@/components/ServicePage";
-import { pageMeta } from "@/lib/meta";
+import type { ServiceData } from "@/components/ServicePage";
 
-export const metadata = pageMeta({
-  title: "Content Writing Services in Pakistan | Let Us Proceed",
-  description:
-    "Content writing services in Pakistan from a Karachi agency: web, blog, article and eCommerce content and PR, researched, written and edited by our team.",
-  path: "/services/content-writing",
-});
-
-const data: ServiceData = {
+export const data: ServiceData = {
   path: "/services/content-writing",
   crumb: "Content Writing",
   h1: "Expert, Authoritative & Trustworthy Content Writing Services in Pakistan",
@@ -111,7 +103,3 @@ const data: ServiceData = {
     description: "Web content, blog, article, eCommerce and public relations writing, researched, written and edited in-house.",
   },
 };
-
-export default function Page() {
-  return <ServicePage data={data} />;
-}

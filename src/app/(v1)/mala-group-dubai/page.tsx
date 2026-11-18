@@ -3,8 +3,9 @@ import { PageHero } from "@/components/PageHero";
 import { Faqs } from "@/components/Faqs";
 import { ContactSection } from "@/components/ContactSection";
 import { BrandArt, ButtonLink, Container, JsonLd } from "@/components/ui";
-import { breadcrumbSchema, faqSchema, graph, orgId, type Faq } from "@/lib/schema";
+import { breadcrumbSchema, faqSchema, graph, orgId } from "@/lib/schema";
 import { pageMeta } from "@/lib/meta";
+import { malaFaqs as faqs } from "@/content/faqs";
 import { site } from "@/lib/site";
 
 const title = "Mala Group Dubai SEO Case Study | Let Us Proceed";
@@ -20,32 +21,6 @@ const results = [
   { value: "256%", label: "more leads" },
 ];
 
-const faqs: Faq[] = [
-  {
-    q: "What did Let Us Proceed do for Mala Group?",
-    a: "We worked on Mala Group's website to recover from a Google penalty and rebuild its search rankings. The work covered technical fixes, on-site content and internal linking, and off-site link building.",
-  },
-  {
-    q: "What is a Google penalty?",
-    a: "A Google penalty is when Google lowers or removes a website's pages from search results because the site breaks its guidelines. It can be a manual action applied by Google's team or an automatic drop caused by an algorithm update.",
-  },
-  {
-    q: "How do you recover from a Google penalty?",
-    a: "Recovery starts with finding the cause, then fixing it, such as removing harmful links or improving thin content. For a manual action, the site owner then asks Google to review the site. Rankings then need to be rebuilt with good content and links.",
-  },
-  {
-    q: "How long does recovery take?",
-    a: "It depends on the cause and how much needs fixing, so we cannot promise a date.",
-  },
-  {
-    q: "What results did Mala Group get?",
-    a: "Organic new users rose 18%, sessions rose 17%, bounce rate fell 8% and leads rose 256%. Results vary by website and market.",
-  },
-  {
-    q: "Can Let Us Proceed do SEO for businesses outside Pakistan?",
-    a: "Yes. We are based in Karachi and have worked with Mala Group in Dubai and with clients in the USA.",
-  },
-];
 
 function Callout({ text, href, label }: { text: string; href: string; label: string }) {
   return (

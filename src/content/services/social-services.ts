@@ -1,15 +1,7 @@
 import { CalendarDays, Compass, MessageCircle, Search } from "lucide-react";
-import { ServicePage, type ServiceData } from "@/components/ServicePage";
-import { pageMeta } from "@/lib/meta";
+import type { ServiceData } from "@/components/ServicePage";
 
-export const metadata = pageMeta({
-  title: "Social Media Marketing Services in Pakistan | Let Us Proceed",
-  description:
-    "Social media marketing services in Pakistan from a Karachi agency: management, strategy, query handling and audits, built around your brand goals.",
-  path: "/services/social-services",
-});
-
-const data: ServiceData = {
+export const data: ServiceData = {
   path: "/services/social-services",
   crumb: "Social Media Services",
   h1: "Social Media Marketing Services in Pakistan",
@@ -119,7 +111,3 @@ const data: ServiceData = {
     description: "Social media management, customer query management, social media strategy and social media audits.",
   },
 };
-
-export default function Page() {
-  return <ServicePage data={data} />;
-}

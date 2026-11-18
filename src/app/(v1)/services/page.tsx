@@ -4,8 +4,9 @@ import { PageHero } from "@/components/PageHero";
 import { Faqs } from "@/components/Faqs";
 import { ContactSection } from "@/components/ContactSection";
 import { BrandArt, ButtonLink, Container, JsonLd, LastUpdated, SectionHeading } from "@/components/ui";
-import { breadcrumbSchema, faqSchema, graph, type Faq } from "@/lib/schema";
+import { breadcrumbSchema, faqSchema, graph } from "@/lib/schema";
 import { pageMeta } from "@/lib/meta";
+import { servicesFaqs as faqs } from "@/content/faqs";
 import { site } from "@/lib/site";
 
 export const metadata = pageMeta({
@@ -81,32 +82,6 @@ const chooser = [
   { goal: "Make your brand stand out", start: [{ label: "Creative services", href: "/services/creative-services" }] },
 ];
 
-const faqs: Faq[] = [
-  {
-    q: "What digital marketing services does Let Us Proceed offer?",
-    a: "Let Us Proceed offers six services: SEO, social media marketing, paid media, SEO content writing, creative services and website development. They are delivered from our Karachi office, and you can hire one service or combine several into one plan.",
-  },
-  {
-    q: "Can I hire just one service?",
-    a: "Yes. You can hire any single service, such as SEO or paid media, or combine several. Tell us your goal through the Get in Touch form and we will recommend which services to start with and which can wait.",
-  },
-  {
-    q: "Which service should a new business start with?",
-    a: "It depends on your goal. A business that needs customers quickly often starts with paid media, while one building long-term visibility starts with SEO and content. Most also need a clear website. We review your goals and recommend a starting point.",
-  },
-  {
-    q: "Where is Let Us Proceed based, and who do you work with?",
-    a: "We are a digital marketing agency based in Karachi, Pakistan, with an office in Baldwin, New York. We work with businesses in Pakistan and the US and are part of Sybrid Pvt. Ltd., a strategic business unit of the Lakson Group of Companies.",
-  },
-  {
-    q: "How much do your services cost?",
-    a: "Price depends on the service, the scope and how long we work together. We do not publish fixed prices. Send your goals through the Get in Touch form or click Get a Quote, and we reply with a recommended plan and quote.",
-  },
-  {
-    q: "How do I get started?",
-    a: "Email info@letusproceed.com, call +92 (213) 840 0967 or +1 (516) 206 6600, or fill in the Get in Touch form on this page. We review your website and goals and reply with a recommended plan.",
-  },
-];
 
 export default function Page() {
   const crumbs = [

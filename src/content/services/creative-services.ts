@@ -1,15 +1,7 @@
 import { Camera, Globe, Layers, Mail, Megaphone, Printer } from "lucide-react";
-import { ServicePage, type ServiceData } from "@/components/ServicePage";
-import { pageMeta } from "@/lib/meta";
+import type { ServiceData } from "@/components/ServicePage";
 
-export const metadata = pageMeta({
-  title: "Creative Branding Agency in Pakistan | Let Us Proceed",
-  description:
-    "Creative branding agency in Pakistan: brand identity, logo and web design, social and email creatives, print, photography and video from Karachi.",
-  path: "/services/creative-services",
-});
-
-const data: ServiceData = {
+export const data: ServiceData = {
   path: "/services/creative-services",
   crumb: "Creative Services",
   h1: "Less Design + More Chemistry = Our Brand Identity Services",
@@ -116,7 +108,3 @@ const data: ServiceData = {
       "Full-scale branding, email creatives, website design, social media and banner ads, print material, and photography and video production.",
   },
 };
-
-export default function Page() {
-  return <ServicePage data={data} />;
-}

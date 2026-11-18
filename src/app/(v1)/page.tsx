@@ -12,8 +12,9 @@ import {
 } from "@/components/HomeSections";
 import { ServicesBento } from "@/components/ServicesBento";
 import { ButtonLink, Container, Highlight, JsonLd, Motif } from "@/components/ui";
-import { faqSchema, graph, type Faq } from "@/lib/schema";
+import { faqSchema, graph } from "@/lib/schema";
 import { pageMeta } from "@/lib/meta";
+import { homeFaqs as faqs } from "@/content/faqs";
 
 export const metadata = pageMeta({
   title: "Digital Marketing Agency in Karachi | Let Us Proceed",
@@ -22,40 +23,6 @@ export const metadata = pageMeta({
   path: "/",
 });
 
-const faqs: Faq[] = [
-  {
-    q: "What is Let Us Proceed?",
-    a: "Let Us Proceed is a digital marketing agency in Karachi, Pakistan, with an office in Baldwin, New York. It is part of Sybrid and the Lakson Group. Our 50+ person team provides SEO, social media marketing, paid media, content writing, branding and web development.",
-  },
-  {
-    q: "What services does a digital marketing agency like Let Us Proceed offer?",
-    a: "We offer six services: SEO, social media marketing, PPC and paid media, web development, SEO content writing, and branding and creative design. You can hire one service or combine several under a single plan, so your website, content and ads work toward the same goal.",
-  },
-  {
-    q: "How much do digital marketing services cost in Pakistan?",
-    a: "Prices depend on the services, your market's competition, the size of your website and your ad budget. We do not publish one fixed price because each plan is different. After a short review of your goals and current setup, we send a written quote with what is included.",
-  },
-  {
-    q: "How long does SEO take to work?",
-    a: "SEO usually takes several months to show steady results, and the time depends on competition, site health and content. Technical fixes can help sooner, while rankings for competitive keywords build over time. We set milestones in the plan and report on rankings, traffic and leads.",
-  },
-  {
-    q: "Should I choose SEO or paid ads?",
-    a: "Choose SEO if you want lasting organic traffic, and paid ads if you need visitors quickly. SEO takes longer but keeps working without paying per click. Many businesses use both: ads for immediate leads while SEO grows. We recommend a mix based on your goals and budget.",
-  },
-  {
-    q: "Do you work with businesses outside Karachi?",
-    a: "Yes. We serve businesses across Pakistan and work with brands in the United States and the UAE. Our Karachi office handles clients in Pakistan, and our Baldwin, New York office supports clients in the US. Most work is done remotely, with calls and regular reports.",
-  },
-  {
-    q: "Do you build websites as well as market them?",
-    a: "Yes. Our web development team builds WordPress, eCommerce and custom websites, from mockups to back-end. Because our SEO and content teams work in the same company, the site is planned for search from the start rather than fixed after launch.",
-  },
-  {
-    q: "How do I get started with Let Us Proceed?",
-    a: "To get started, send your details through our Get a Quote form or call our Karachi office. We review your goals and current website, then reply with a recommended plan and quote.",
-  },
-];
 
 export default function Home() {
   return (

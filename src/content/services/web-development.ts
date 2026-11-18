@@ -1,15 +1,7 @@
 import { Briefcase, Code2, LayoutTemplate, Newspaper, ShoppingCart, UserRound } from "lucide-react";
-import { ServicePage, type ServiceData } from "@/components/ServicePage";
-import { pageMeta } from "@/lib/meta";
+import type { ServiceData } from "@/components/ServicePage";
 
-export const metadata = pageMeta({
-  title: "Web Development Services in Pakistan | Let Us Proceed",
-  description:
-    "Web development services in Pakistan from a Karachi agency: WordPress, eCommerce, CMS, news, portfolio and open-source websites built to be SEO-friendly.",
-  path: "/services/web-development",
-});
-
-const data: ServiceData = {
+export const data: ServiceData = {
   path: "/services/web-development",
   crumb: "Web Development",
   h1: "One-Window Web Development Services in Pakistan",
@@ -123,7 +115,3 @@ const data: ServiceData = {
       "Subscription, eCommerce, WordPress and CMS, news and blog, business and portfolio, and open-source websites, from mockups to back-end.",
   },
 };
-
-export default function Page() {
-  return <ServicePage data={data} />;
-}

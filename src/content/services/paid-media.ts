@@ -1,15 +1,7 @@
 import { Megaphone, MousePointerClick, Repeat, Smartphone, Target, TrendingUp } from "lucide-react";
-import { ServicePage, type ServiceData } from "@/components/ServicePage";
-import { pageMeta } from "@/lib/meta";
+import type { ServiceData } from "@/components/ServicePage";
 
-export const metadata = pageMeta({
-  title: "Paid Media Services in Pakistan | Let Us Proceed",
-  description:
-    "Paid media and Google Ads services in Pakistan from a Karachi agency: search, display, shopping, video and app campaigns, built around your goals.",
-  path: "/services/paid-media",
-});
-
-const data: ServiceData = {
+export const data: ServiceData = {
   path: "/services/paid-media",
   crumb: "Paid Media",
   h1: "Paid Media Services in Pakistan",
@@ -127,7 +119,3 @@ const data: ServiceData = {
       "Google Ads search, display, shopping, video and app campaigns for brand awareness, engagement, traffic, app installs, conversions and remarketing.",
   },
 };
-
-export default function Page() {
-  return <ServicePage data={data} />;
-}
