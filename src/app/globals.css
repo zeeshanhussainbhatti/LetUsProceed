@@ -42,3 +42,15 @@ h1, h2, h3, h4 {
     radial-gradient(60% 80% at 70% 60%, #a8e4f7 0%, transparent 60%),
     linear-gradient(120deg, #e7e4fa 0%, #c9ecfb 55%, #eef3fb 100%);
 }
+
+/* Faint grid + dot texture behind heroes, as on the live site */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.35) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.35) 1px, transparent 1px);
+  background-size: 144px 144px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
