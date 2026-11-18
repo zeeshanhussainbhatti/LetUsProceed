@@ -1,11 +1,17 @@
 import Image from "next/image";
-import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { Faqs } from "@/components/Faqs";
 import { ContactSection } from "@/components/ContactSection";
-import { PlatformArcs } from "@/components/PlatformArcs";
+import {
+  ClientsSection,
+  GlobalReachSection,
+  JoinTeamSection,
+  PortfolioSection,
+  ProcessSection,
+  TestimonialSection,
+} from "@/components/HomeSections";
 import { ServicesBento } from "@/components/ServicesBento";
-import { ButtonLink, Container, Highlight, JsonLd, Motif, SectionHeading } from "@/components/ui";
+import { ButtonLink, Container, Highlight, JsonLd, Motif } from "@/components/ui";
 import { faqSchema, graph, type Faq } from "@/lib/schema";
 import { pageMeta } from "@/lib/meta";
 
@@ -15,27 +21,6 @@ export const metadata = pageMeta({
     "Let Us Proceed is a digital marketing agency in Karachi and Pakistan offering SEO, social media, paid ads and web development. Get a quote.",
   path: "/",
 });
-
-const steps = [
-  { title: "Audit", text: "We review your website, search visibility, social channels and competitors, and agree the goals that matter to your business." },
-  { title: "Plan", text: "We choose the channels, keywords and budget, and give you a written plan with timelines." },
-  { title: "Execute", text: "Our SEO, content, design, development and ads teams deliver the plan, with regular updates to you." },
-  { title: "Measure", text: "We report on rankings, traffic, leads and sales, then adjust the plan on what the data shows." },
-];
-
-const portfolio = [
-  { src: "/images/portfolio/sporadic.webp", w: 789, h: 756, alt: "Sporadic music website design shown on desktop", cls: "md:row-span-2" },
-  { src: "/images/portfolio/touchstone.webp", w: 396, h: 414, alt: "Touchstone Communications UX/UI website design for a BPO company", cls: "" },
-  { src: "/images/portfolio/pheeka-responsive.webp", w: 792, h: 756, alt: "Pheeka diabetes awareness website design by Let Us Proceed, shown on mobile", cls: "md:row-span-2" },
-  { src: "/images/portfolio/pheeka-web.webp", w: 396, h: 330, alt: "Pheeka diabetes awareness website design by Let Us Proceed", cls: "" },
-];
-
-const clients = [
-  { src: "/images/clients/sybrid.webp", alt: "Sybrid logo", dark: true },
-  { src: "/images/clients/admediary.webp", alt: "AdMediary logo", dark: false },
-  { src: "/images/clients/bakecarry.webp", alt: "Bakecarry logo", dark: false },
-  { src: "/images/clients/amantech.webp", alt: "Amantech (Aman Foundation) logo", dark: true },
-];
 
 const faqs: Faq[] = [
   {
@@ -165,159 +150,12 @@ export default function Home() {
 
       <ServicesBento />
 
-      {/* How we work */}
-      <section className="py-20 sm:py-28">
-        <Container>
-          <SectionHeading title="How our digital marketing process works" align="center" motif />
-          <ol className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {steps.map((s, i) => (
-              <li key={s.title} className="relative rounded-3xl bg-surface-soft p-7">
-                <span className="font-display text-5xl font-semibold text-brand-blue/25" aria-hidden="true">
-                  0{i + 1}
-                </span>
-                <h3 className="mt-2 text-xl font-semibold">{s.title}</h3>
-                <p className="mt-2 leading-relaxed text-muted">{s.text}</p>
-              </li>
-            ))}
-          </ol>
-        </Container>
-      </section>
-
-      {/* Portfolio */}
-      <section className="pb-20 sm:pb-28">
-        <Container>
-          <SectionHeading title="Our portfolio: branding, websites, social media, SEO and logo design" align="center" />
-        </Container>
-        <div className="mt-12 grid gap-3 px-3 md:grid-cols-[2fr_1fr_2fr] md:grid-rows-2">
-          {portfolio.map((p) => (
-            <figure key={p.src} className={`overflow-hidden rounded-2xl bg-surface-soft ${p.cls}`}>
-              <Image src={p.src} alt={p.alt} width={p.w} height={p.h} className="h-full w-full object-cover" />
-            </figure>
-          ))}
-        </div>
-        <p className="mt-8 text-center">
-          <Link href="/case-study" className="font-medium text-brand-blue underline-offset-4 hover:underline">
-            See the full results in our digital marketing case studies →
-          </Link>
-        </p>
-      </section>
-
-      {/* Join the team */}
-      <section className="overflow-hidden bg-white">
-        <Container className="grid items-end gap-10 lg:grid-cols-2">
-          <div className="self-center py-10">
-            <h2 className="text-4xl font-semibold tracking-tight sm:text-6xl">Join the Team</h2>
-            <p className="mt-3 text-xl font-medium">We are Optimists who love to work together</p>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted">
-              If you&apos;re up for something challenging yet interesting, don&apos;t mind working and reworking on a
-              certain project until it&apos;s the best that could be delivered, and your own best critique, then
-              Proceed is just the right place for you.
-            </p>
-            <p className="mt-6">
-              See open roles on our{" "}
-              <Link href="/careers" className="font-medium text-brand-blue underline-offset-4 hover:underline">
-                Careers at Let Us Proceed
-              </Link>{" "}
-              page.
-            </p>
-          </div>
-          <Image
-            src="/images/join-team.webp"
-            alt="Illustration of two team members, one holding a magnifying glass and one a megaphone"
-            width={898}
-            height={655}
-            className="w-full"
-          />
-        </Container>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-20 sm:py-28">
-        <Container>
-          <SectionHeading title="Testimonials" align="center" motif />
-          <figure className="mx-auto mt-12 grid max-w-5xl items-center gap-8 rounded-[2rem] bg-gradient-to-br from-sky-200/70 via-sky-100 to-white p-7 shadow-sm sm:p-12 md:grid-cols-[1fr_auto]">
-            <div>
-              <p className="font-display text-2xl font-medium uppercase sm:text-3xl">Concave Craft</p>
-              <blockquote className="mt-4 space-y-4 leading-relaxed text-ink/85">
-                <p>
-                  Wanted to share my gratitude towards Proceed for the amazing job done in the past 6 months. Starting
-                  with the strategy for 4 brands and executing 2 brands with end to end cycle of content development,
-                  design execution, excellent social media strategy and execution, reporting and managing accounts.
-                </p>
-                <p>Overall I&apos;m really happy with the account management and swift responses over all communication channels.</p>
-                <p>
-                  Proceed is highly recommended for B2B &amp; B2C segments for brand development &amp; management, social
-                  media strategy &amp; execution and one window solution for SEO &amp; web development services as per
-                  business requirements.
-                </p>
-              </blockquote>
-              <figcaption className="mt-6 text-sm font-medium text-ink">
-                Concave Craft: brand strategy, content development, design, social media management and reporting.
-              </figcaption>
-            </div>
-            <Image
-              src="/images/clients/concave-craft.webp"
-              alt="Concave Craft logo"
-              width={252}
-              height={250}
-              className="mx-auto w-40 rounded-md shadow-lg ring-2 ring-ink md:w-48"
-            />
-          </figure>
-        </Container>
-      </section>
-
-      {/* Clients */}
-      <section className="pb-20 sm:pb-28">
-        <Container className="grid items-center gap-12 lg:grid-cols-2">
-          <div className="flex items-center gap-8">
-            <Motif className="hidden shrink-0 md:block" />
-            <div>
-              <h2 className="text-4xl font-medium uppercase tracking-tight sm:text-5xl">
-                Our
-                <br />
-                <Highlight>Clients</Highlight>
-              </h2>
-              <p className="mt-6 max-w-md text-lg leading-relaxed text-muted">
-                We believe in working together and growing together, which is what sets us apart from other digital
-                marketing companies in Pakistan.
-              </p>
-            </div>
-          </div>
-          <ul className="grid w-full max-w-md grid-cols-2 gap-4 justify-self-center lg:justify-self-end">
-            {clients.map((c) => (
-              <li key={c.src} className={`flex aspect-square items-center justify-center rounded-3xl p-4 shadow-sm ring-1 ring-black/10 ${c.dark ? "bg-[#2a2a2a]" : "bg-white"}`}>
-                <Image src={c.src} alt={c.alt} width={210} height={210} className="w-full rounded-xl" />
-              </li>
-            ))}
-          </ul>
-        </Container>
-      </section>
-
-      {/* Global reach */}
-      <section className="bg-brand-gradient py-20 sm:py-28">
-        <Container className="text-center">
-          <div className="flex items-center justify-center gap-6">
-            <Motif className="hidden md:block" />
-            <div>
-              <p className="font-display text-3xl font-medium uppercase tracking-tight sm:text-5xl">You&apos;ve reached enough.</p>
-              <p className="mt-3 font-display text-2xl font-medium uppercase sm:text-3xl">Now let&apos;s do the impossible</p>
-            </div>
-            <Motif className="hidden md:block" />
-          </div>
-          <p className="mx-auto mt-6 max-w-4xl text-lg leading-relaxed text-ink/85">
-            We operate on a global frequency, delivering solutions from the tech hubs of New York to the boardrooms of
-            Dubai. While we have deep roots in the high-growth markets of Pakistan, our focus is on the horizon.
-          </p>
-          <h2 className="mx-auto mt-14 max-w-3xl text-2xl font-semibold leading-snug sm:text-3xl">
-            Digital marketing in Karachi, across Pakistan and in the US
-          </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-lg leading-relaxed text-muted">
-            Let Us Proceed is headquartered in Karachi, Pakistan, and serves businesses across Pakistan. Our US office in
-            Baldwin, New York supports clients in the United States. We also work with brands in the UAE.
-          </p>
-          <PlatformArcs />
-        </Container>
-      </section>
+      <ProcessSection />
+      <PortfolioSection />
+      <JoinTeamSection />
+      <TestimonialSection />
+      <ClientsSection />
+      <GlobalReachSection />
 
       <Faqs title="Frequently asked questions about our digital marketing agency in Karachi" faqs={faqs} />
 
