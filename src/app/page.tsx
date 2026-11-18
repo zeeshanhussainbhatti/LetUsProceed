@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Code2, Megaphone, Palette, PenLine, Search, Share2 } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { Faqs } from "@/components/Faqs";
 import { ContactSection } from "@/components/ContactSection";
 import { PlatformArcs } from "@/components/PlatformArcs";
+import { ServicesBento } from "@/components/ServicesBento";
 import { ButtonLink, Container, Highlight, JsonLd, Motif, SectionHeading } from "@/components/ui";
 import { faqSchema, graph, type Faq } from "@/lib/schema";
 import { pageMeta } from "@/lib/meta";
@@ -15,51 +15,6 @@ export const metadata = pageMeta({
     "Let Us Proceed is a digital marketing agency in Karachi and Pakistan offering SEO, social media, paid ads and web development. Get a quote.",
   path: "/",
 });
-
-const services = [
-  {
-    icon: Search,
-    title: "SEO services in Karachi and Pakistan",
-    href: "/services/seo",
-    link: "Explore SEO services",
-    text: "Our SEO company in Karachi covers technical SEO, on-page SEO and off-page SEO. We fix what stops Google from crawling your site, then build the content and links that move rankings.",
-  },
-  {
-    icon: Share2,
-    title: "Social media marketing in Karachi",
-    href: "/services/social-services",
-    link: "Explore social media marketing",
-    text: "We plan, publish and manage your social channels, handle customer queries and audit what is working. The goal is a loyal audience, not just a bigger follower count.",
-  },
-  {
-    icon: Megaphone,
-    title: "PPC and paid media advertising",
-    href: "/services/paid-media",
-    link: "Explore paid media services",
-    text: "Our team runs Google Ads and Meta ads for brands across Pakistan. Campaigns are built around your goals and budget, then adjusted on real conversion data.",
-  },
-  {
-    icon: Code2,
-    title: "Web development in Karachi",
-    href: "/services/web-development",
-    link: "Explore web development",
-    text: "We build WordPress, eCommerce and custom websites from mockups to back-end. Every site is built to load fast and rank.",
-  },
-  {
-    icon: PenLine,
-    title: "SEO content writing",
-    href: "/services/content-writing",
-    link: "Explore content writing",
-    text: "We write blogs, web copy and brand content that answers what your customers search for. Each piece is planned around a keyword and a business goal.",
-  },
-  {
-    icon: Palette,
-    title: "Branding and creative services",
-    href: "/services/creative-services",
-    link: "Explore creative services",
-    text: "We design logos, brand identities and campaign creative. The work is meant to make a visitor trust you quickly and act.",
-  },
-];
 
 const steps = [
   { title: "Audit", text: "We review your website, search visibility, social channels and competitors, and agree the goals that matter to your business." },
@@ -208,32 +163,7 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* Services */}
-      <section className="bg-brand-gradient py-20 sm:py-28">
-        <Container>
-          <SectionHeading
-            title="Digital marketing services in Pakistan, under one roof"
-            lead="We run six services from our Karachi office. Each one has its own page with scope, process and results."
-          />
-          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((s, i) => (
-              <article
-                key={s.href}
-                className={`flex flex-col rounded-3xl p-7 sm:p-8 ${i === 0 ? "bg-ink text-white" : "border border-brand-blue/40 bg-white/70 backdrop-blur"}`}
-              >
-                <span className={`flex h-14 w-14 items-center justify-center rounded-full ${i === 0 ? "bg-white text-ink" : "bg-brand-blue text-white"}`}>
-                  <s.icon className="h-6 w-6" aria-hidden="true" />
-                </span>
-                <h3 className="mt-6 text-xl font-semibold uppercase leading-snug">{s.title}</h3>
-                <p className={`mt-3 flex-1 leading-relaxed ${i === 0 ? "text-white/85" : "text-muted"}`}>{s.text}</p>
-                <Link href={s.href} className={`mt-6 font-medium underline-offset-4 hover:underline ${i === 0 ? "text-brand-orange" : "text-brand-blue"}`}>
-                  {s.link} →
-                </Link>
-              </article>
-            ))}
-          </div>
-        </Container>
-      </section>
+      <ServicesBento />
 
       {/* How we work */}
       <section className="py-20 sm:py-28">
