@@ -170,3 +170,60 @@ html {
 @media (prefers-reduced-motion: reduce) {
   .v3-blob, .v3-panel:not([hidden]) { animation: none; }
 }
+
+/* ---------- Version 4 (neo-brutalist) ---------- */
+.v4-root {
+  background: #fff;
+  color: #1d1d1f;
+}
+.v4-dots {
+  background-image: radial-gradient(#1d1d1f 1.2px, transparent 1.2px);
+  background-size: 22px 22px;
+}
+.v4-box {
+  box-shadow: 8px 8px 0 0 var(--sh, #1d1d1f);
+}
+.v4-hover {
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.v4-hover:hover,
+.v4-hover:focus-within {
+  transform: translate(-4px, -4px);
+  box-shadow: 12px 12px 0 0 var(--sh, #1d1d1f);
+}
+.v4-btn {
+  box-shadow: 5px 5px 0 0 #1d1d1f;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.v4-btn:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px 0 0 #1d1d1f;
+}
+.v4-btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 0 #1d1d1f;
+}
+/* Expanding service panels: the hovered/focused panel grows */
+.v4-panels > * {
+  transition: flex-grow 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+@media (min-width: 1024px) {
+  .v4-panels > * { flex: 1 1 0; }
+  .v4-panels > *:hover,
+  .v4-panels > *:focus-within { flex-grow: 3.2; }
+  .v4-panels > * .v4-panel-body { opacity: 0; transition: opacity 0.3s ease 0.1s; }
+  .v4-panels > *:hover .v4-panel-body,
+  .v4-panels > *:focus-within .v4-panel-body { opacity: 1; }
+  .v4-panels > *:hover .v4-panel-v,
+  .v4-panels > *:focus-within .v4-panel-v { opacity: 0; }
+}
+/* Ticket edge: half-circle notches */
+.v4-ticket {
+  -webkit-mask: radial-gradient(circle 18px at 0 50%, transparent 98%, #000) left / 51% 100% no-repeat,
+    radial-gradient(circle 18px at 100% 50%, transparent 98%, #000) right / 51% 100% no-repeat;
+  mask: radial-gradient(circle 18px at 0 50%, transparent 98%, #000) left / 51% 100% no-repeat,
+    radial-gradient(circle 18px at 100% 50%, transparent 98%, #000) right / 51% 100% no-repeat;
+}
+@media (prefers-reduced-motion: reduce) {
+  .v4-hover, .v4-btn, .v4-panels > * { transition: none; }
+}
