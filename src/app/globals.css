@@ -2,10 +2,10 @@
 
 /* Proceed brand tokens (taken from the live site) */
 :root {
-  --brand-blue: #1a73e8;
+  --brand-blue: #1772e6;
   --brand-blue-deep: #0b3fd6;
-  --brand-orange: #f7882f;
-  --brand-red: #d7141a;
+  --brand-orange: #f98a28;
+  --brand-red: #c81418;
   --ink: #1d1d1f;
   --muted: #5b5b66;
   --surface: #ffffff;
@@ -41,4 +41,132 @@ h1, h2, h3, h4 {
     radial-gradient(60% 80% at 20% 20%, #c3bdf0 0%, transparent 60%),
     radial-gradient(60% 80% at 70% 60%, #a8e4f7 0%, transparent 60%),
     linear-gradient(120deg, #e7e4fa 0%, #c9ecfb 55%, #eef3fb 100%);
+}
+
+/* Faint grid + dot texture behind heroes, as on the live site */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.35) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.35) 1px, transparent 1px);
+  background-size: 144px 144px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Infinite logo / service strip */
+.marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  animation: marquee 40s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+/* ---------- Version 2 ---------- */
+.v2-bg {
+  background: #f6f3ee;
+}
+.v2-mark > * {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: v2-in 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.v2-mark-a { animation-delay: 0.05s; --from: translate(40%, -40%); }
+.v2-mark-b { animation-delay: 0.15s; --from: translate(0, -30%); }
+.v2-mark-c { animation-delay: 0.25s; --from: translate(0, 30%); }
+.v2-mark-d { animation-delay: 0.35s; --from: translate(-40%, 40%); }
+.v2-mark-e, .v2-mark-f { animation-delay: 0.6s; --from: scale(0.6); }
+@keyframes v2-in {
+  from { opacity: 0; transform: var(--from); }
+  to { opacity: 1; transform: none; }
+}
+.v2-float {
+  animation: v2-float 7s ease-in-out infinite;
+}
+@keyframes v2-float {
+  50% { transform: translateY(-14px) rotate(2deg); }
+}
+.v2-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--stroke, #1d1d1f);
+}
+@media (prefers-reduced-motion: reduce) {
+  .v2-mark > *, .v2-float { animation: none; }
+}
+
+/* ---------- Version 3 ---------- */
+.v3-bg {
+  background: #08090d;
+  color: #fff;
+}
+.v3-grid-bg {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.05) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse at 50% 30%, black 30%, transparent 75%);
+}
+.v3-grad {
+  background: linear-gradient(90deg, #4f9bff 0%, #1772e6 30%, #f98a28 65%, #ff5b3a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.v3-spot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(420px circle at var(--x, -999px) var(--y, -999px), rgb(249 138 40 / 0.16), transparent 45%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+.v3-spot:hover::before {
+  opacity: 1;
+}
+.v3-blob {
+  animation: v3-drift 18s ease-in-out infinite;
+}
+@keyframes v3-drift {
+  33% { transform: translate(6%, 8%) scale(1.08); }
+  66% { transform: translate(-6%, 4%) scale(0.95); }
+}
+.v3-panel:not([hidden]) {
+  animation: v3-pop 0.45s ease both;
+}
+@keyframes v3-pop {
+  from { opacity: 0; transform: translateY(10px); }
+}
+@media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  [data-reveal].in {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .v3-blob, .v3-panel:not([hidden]) { animation: none; }
 }
